@@ -9,21 +9,30 @@
 <link rel="apple-touch-icon" href="img/pink-bird-branch.png">
 <style>
   :root {
-    --green: #1A472A;
-    --green-soft: #2E7D32;
-    --pink: #C2185B;
-    --pink-soft: #E91E63;
-    --cream: #F7F3EC;
-    --ink: #1E1B18;
-    --muted: #5C554D;
-    --rule: #E2DACE;
+    /* ── Navy ───────────────────────────── */
+    --navy:        #2A5298;  /* header / footer field      */
+    --navy-deep:   #22467F;  /* darker band, hairlines     */
+    --navy-ink:    #24478A;  /* headings on ivory          */
+    /* ── Muted gold ─────────────────────── */
+    --gold:        #C8A96A;  /* gold on navy               */
+    --gold-bright: #F0D08C;  /* links on navy              */
+    --gold-deep:   #8A6A33;  /* gold as text on ivory (AA) */
+    --gold-wash:   #EFE4CC;  /* soft fills, hairlines      */
+    /* ── Soft ivory ─────────────────────── */
+    --ivory:       #FAF6EC;  /* page field                 */
+    --surface:     #FFFEFC;  /* cards — near-white, a whisper of ivory */
+    --ink:         #1B2333;
+    --muted:       #55606F;
+    --rule:        #E4DCCB;
     --max: 780px;
+    /* Brand pink — the mascot's colour, kept for email addresses */
+    --pink: #C2185B; --pink-light: #F8BBD0;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { -webkit-text-size-adjust: 100%; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--cream);
+    background: var(--ivory);
     color: var(--ink);
     line-height: 1.65;
     font-size: 17px;
@@ -31,15 +40,16 @@
   .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
   header.site {
-    background: var(--green);
+    background: var(--navy);
     color: #fff;
     padding: 14px 0;
+    border-bottom: 3px solid var(--gold);
   }
   header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  .brand { font-weight: 700; letter-spacing: .2px; color: #fff; text-decoration: none; font-size: 16px; }
-  .brand span { color: #F8BBD0; }
-  nav a { color: #D7E8DC; text-decoration: none; margin-left: 20px; font-size: 15px; }
-  nav a:hover, nav a:focus { color: #fff; text-decoration: underline; }
+  .brand { font-weight: 700; letter-spacing: .2px; color: #fff; text-decoration: none; font-size: 18px; }
+  .brand span { color: var(--gold-bright); font-weight: 700; }
+  nav a { color: #DCE4F2; text-decoration: none; margin-left: 20px; font-size: 17px; }
+  nav a:hover, nav a:focus { color: var(--gold-bright); text-decoration: underline; }
   nav a:first-child { margin-left: 0; }
 
   .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--rule); }
@@ -47,50 +57,63 @@
   .hero-copy { flex: 1 1 auto; min-width: 0; }
   .hero-art { flex: 0 0 300px; max-width: 300px; }
   .hero-art img { width: 100%; height: auto; display: block; }
-  .hero h1 { font-size: 2.4rem; line-height: 1.15; letter-spacing: -.5px; margin-bottom: 14px; }
+  .hero h1 { font-size: 2.4rem; line-height: 1.15; letter-spacing: -.5px; margin-bottom: 14px; color: var(--navy-ink); }
   .hero .tagline {
-    display: inline-block; font-size: 1.05rem; font-weight: 600; color: var(--pink);
-    letter-spacing: .4px; text-transform: uppercase; margin-bottom: 20px;
+    display: inline-block; font-size: 1.05rem; font-weight: 700; color: var(--gold-deep);
+    letter-spacing: .8px; text-transform: uppercase; margin-bottom: 20px;
   }
   .hero p.lead { font-size: 1.15rem; color: var(--muted); max-width: 62ch; }
 
   section { padding: 44px 0; border-bottom: 1px solid var(--rule); }
   section:last-of-type { border-bottom: 0; }
-  h2 { font-size: 1.45rem; margin-bottom: 14px; letter-spacing: -.2px; }
+  h2 { font-size: 1.45rem; margin-bottom: 14px; letter-spacing: -.2px; color: var(--navy-ink); }
   h3 { font-size: 1.05rem; margin-bottom: 6px; }
   p + p { margin-top: 14px; }
   p { max-width: 68ch; }
 
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; margin-top: 24px; }
-  .card { background: #fff; border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; }
-  .card h3 { color: var(--green); }
+  .card {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 20px; border-top: 3px solid var(--gold);
+  }
+  .card h3 { color: var(--navy-ink); }
   .card p { font-size: .95rem; color: var(--muted); margin: 0; }
 
   .note {
-    background: #fff; border-left: 4px solid var(--green-soft);
+    background: var(--surface); border-left: 4px solid var(--gold);
     padding: 16px 20px; border-radius: 0 8px 8px 0; margin-top: 24px;
+    border-top: 1px solid var(--rule); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
   }
   .note p { font-size: .96rem; margin: 0; }
 
-  footer.site { background: var(--green); color: #C9DDD0; padding: 36px 0; font-size: .9rem; }
-  footer.site a { color: #F8BBD0; }
+  footer.site {
+    background: var(--navy-deep); color: #DCE4F2; padding: 36px 0; font-size: .9rem;
+    border-top: 3px solid var(--gold);
+  }
+  footer.site a { color: var(--gold-bright); }
   footer.site p + p { margin-top: 12px; }
-  footer.site .legal { font-size: .84rem; color: #9DBCA8; max-width: 70ch; }
+  footer.site .legal { font-size: .84rem; color: #C3CFE4; max-width: 70ch; }
 
-  a { color: var(--pink); }
+  a { color: var(--gold-deep); }
+  /* email addresses in the brand pink */
+  a[href^="mailto:"] { color: var(--pink); }
+  footer.site a[href^="mailto:"] { color: var(--pink-light); }
 
   .origin { display: flex; gap: 28px; align-items: flex-start; margin-top: 22px; }
   .origin figure { flex: 0 0 220px; margin: 0; }
-  .origin img { width: 100%; height: auto; display: block; border-radius: 8px;
-    border: 1px solid var(--rule); }
+  /* matted like a framed painting, so its green background reads as artwork */
+  .origin img { width: 100%; height: auto; display: block; border-radius: 4px;
+    background: var(--surface); padding: 10px; border: 1px solid var(--gold);
+    box-shadow: 0 1px 3px rgba(42,82,152,.16); }
   .origin figcaption { font-size: .82rem; color: var(--muted); margin-top: 8px; line-height: 1.45; }
   .origin .origin-copy { flex: 1 1 auto; min-width: 0; }
 
   .coach { display: flex; gap: 24px; align-items: center; margin-top: 26px;
-    background: #fff; border: 1px solid var(--rule); border-radius: 10px; padding: 20px 24px; }
+    background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--gold);
+    border-radius: 0 10px 10px 0; padding: 20px 24px; }
   .coach img { flex: 0 0 120px; width: 120px; height: auto; display: block; }
   .coach p { margin: 0; font-size: .97rem; color: var(--muted); }
-  .coach h3 { color: var(--green); margin-bottom: 6px; }
+  .coach h3 { color: var(--navy-ink); margin-bottom: 6px; }
 
   @media (max-width: 720px) {
     .hero-inner { flex-direction: column-reverse; align-items: flex-start; gap: 24px; }
@@ -105,6 +128,40 @@
     body { font-size: 16px; }
   }
 </style>
+<link rel="canonical" href="https://pinkbirdmahj.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pinkbirdmahj.com/#organization",
+      "name": "Pink Bird Mahj LLC",
+      "alternateName": "Pink Bird Mahj",
+      "url": "https://pinkbirdmahj.com/",
+      "logo": "https://pinkbirdmahj.com/img/pink-bird-branch.png",
+      "image": "https://pinkbirdmahj.com/img/pink-bird-branch.png",
+      "email": "info@pinkbirdmahj.com",
+      "foundingDate": "2026-07-02",
+      "description": "Pink Bird Mahj LLC builds Pink Bird Mahj: Card Coach, an American Mahjong practice app built around the National Mah Jongg League card.",
+      "disambiguatingDescription": "A software company in Texas, United States, publishing a mobile American Mahjong training app. Not affiliated with any similarly named in-person mahjong instruction business.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pinkbirdmahj.com/#website",
+      "url": "https://pinkbirdmahj.com/",
+      "name": "Pink Bird Mahj: Card Coach",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://pinkbirdmahj.com/#organization" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -209,7 +266,8 @@
     <h2>You bring the card</h2>
     <p>
       An official National Mah Jongg League card is required to play, and must be purchased from the
-      League. Card Coach works alongside your physical card — it never displays or replaces it. The
+      League, an authorized store, or a dealer. Card Coach works alongside your physical card — it
+      never displays or replaces it. The
       app points you back to the card, because reading it fluently is the skill being taught.
     </p>
     <div class="note">
@@ -271,7 +329,8 @@
     <p class="legal">
       Pink Bird Mahj: Card Coach is an independent app and is not affiliated with, endorsed by, or
       sponsored by the National Mah Jongg League (NMJL). An official NMJL card is required to play and
-      must be purchased from the League. © 2026 Pink Bird Mahj LLC. All rights reserved.
+      must be purchased from the League, an authorized store, or a dealer. © 2026 Pink Bird
+      Mahj LLC. All rights reserved.
     </p>
   </div>
 </footer>
