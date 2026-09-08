@@ -9,39 +9,49 @@
 <link rel="apple-touch-icon" href="img/pink-bird-branch.png">
 <style>
   :root {
-    --green: #1A472A; --green-soft: #2E7D32; --pink: #C2185B;
-    --cream: #F7F3EC; --ink: #1E1B18; --muted: #5C554D; --rule: #E2DACE; --max: 780px;
+    /* Navy */
+    --navy: #2A5298; --navy-deep: #22467F; --navy-ink: #24478A;
+    /* Muted gold */
+    --gold: #C8A96A; --gold-bright: #F0D08C; --gold-deep: #8A6A33; --gold-wash: #EFE4CC;
+    /* Soft ivory */
+    --ivory: #FAF6EC; --surface: #FFFEFC;
+    --ink: #1B2333; --muted: #55606F; --rule: #E4DCCB; --max: 780px;
+    /* Brand pink — the mascot's colour, kept for email addresses */
+    --pink: #C2185B; --pink-light: #F8BBD0;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { -webkit-text-size-adjust: 100%; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--cream); color: var(--ink); line-height: 1.65; font-size: 17px; }
+    background: var(--ivory); color: var(--ink); line-height: 1.65; font-size: 17px; }
   .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-  header.site { background: var(--green); color: #fff; padding: 14px 0; }
+  header.site { background: var(--navy); color: #fff; padding: 14px 0; border-bottom: 3px solid var(--gold); }
   header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  .brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 16px; }
-  .brand span { color: #F8BBD0; }
-  nav a { color: #D7E8DC; text-decoration: none; margin-left: 20px; font-size: 15px; }
-  nav a:hover { color: #fff; text-decoration: underline; }
+  .brand { font-weight: 700; letter-spacing: .2px; color: #fff; text-decoration: none; font-size: 18px; }
+  .brand span { color: var(--gold-bright); font-weight: 700; }
+  nav a { color: #DCE4F2; text-decoration: none; margin-left: 20px; font-size: 17px; }
+  nav a:hover { color: var(--gold-bright); text-decoration: underline; }
   nav a:first-child { margin-left: 0; }
   main { padding: 48px 0 56px; }
-  h1 { font-size: 2rem; letter-spacing: -.4px; margin-bottom: 10px; }
+  h1 { color: var(--navy-ink); font-size: 2rem; letter-spacing: -.4px; margin-bottom: 10px; }
   .lead { color: var(--muted); font-size: 1.08rem; margin-bottom: 30px; max-width: 64ch; }
-  h2 { font-size: 1.2rem; margin: 34px 0 10px; color: var(--green); }
+  h2 { font-size: 1.2rem; margin: 34px 0 10px; color: var(--navy-ink); }
   h3 { font-size: 1.02rem; margin: 22px 0 4px; }
   p, li { max-width: 68ch; }
   p + p { margin-top: 13px; }
   ul { margin: 12px 0 0 22px; }
   li + li { margin-top: 8px; }
-  .contact { background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+  .contact { background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--gold); border-radius: 0 10px 10px 0;
     padding: 22px 24px; margin: 26px 0; }
   .contact p { margin: 0; }
   .contact .addr { font-size: 1.15rem; font-weight: 600; margin-top: 6px; }
-  a { color: var(--pink); }
-  footer.site { background: var(--green); color: #C9DDD0; padding: 36px 0; font-size: .9rem; }
-  footer.site a { color: #F8BBD0; }
+  a { color: var(--gold-deep); }
+  /* email addresses in the brand pink */
+  a[href^="mailto:"] { color: var(--pink); }
+  footer.site a[href^="mailto:"] { color: var(--pink-light); }
+  footer.site { background: var(--navy-deep); color: #DCE4F2; border-top: 3px solid var(--gold); padding: 36px 0; font-size: .9rem; }
+  footer.site a { color: var(--gold-bright); }
   footer.site p + p { margin-top: 12px; }
-  footer.site .legal { font-size: .84rem; color: #9DBCA8; max-width: 70ch; }
+  footer.site .legal { font-size: .84rem; color: #C3CFE4; max-width: 70ch; }
   @media (max-width: 560px) { h1 { font-size: 1.65rem; } body { font-size: 16px; } }
 </style>
 </head>
@@ -69,7 +79,7 @@
   <div class="contact">
     <p><strong>Email us</strong></p>
     <p class="addr"><a href="mailto:info@pinkbirdmahj.com">info@pinkbirdmahj.com</a></p>
-    <p style="margin-top:10px; color:#5C554D; font-size:.95rem;">
+    <p style="margin-top:10px; color:#55606F; font-size:.95rem;">
       We aim to reply within two business days.
     </p>
   </div>
@@ -96,8 +106,9 @@
 
   <h3>Do I need a National Mah Jongg League card?</h3>
   <p>
-    Yes. An official NMJL card is required to play, and must be purchased from the League. The app
-    works alongside your physical card and never displays or replaces it.
+    Yes. An official NMJL card is required to play, and must be purchased from the League, an
+    authorized store, or a dealer. The app works alongside your physical card and never displays or
+    replaces it.
   </p>
 
   <h3>What happens when the new card comes out each April?</h3>
@@ -148,7 +159,8 @@
     <p class="legal">
       Pink Bird Mahj: Card Coach is an independent app and is not affiliated with, endorsed by, or
       sponsored by the National Mah Jongg League (NMJL). An official NMJL card is required to play and
-      must be purchased from the League. © 2026 Pink Bird Mahj LLC. All rights reserved.
+      must be purchased from the League, an authorized store, or a dealer. © 2026 Pink Bird
+      Mahj LLC. All rights reserved.
     </p>
   </div>
 </footer>

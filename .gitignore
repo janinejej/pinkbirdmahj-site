@@ -1,0 +1,5 @@
+# Local render checks — never deploy these.
+# GitHub Pages serves every HTML file in the repo root, so a committed
+# *-preview.html becomes a live, crawlable duplicate of a real page and
+# competes with it in search results.
+*-preview.html
