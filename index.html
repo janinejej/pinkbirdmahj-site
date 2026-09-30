@@ -79,6 +79,17 @@
   .card h3 { color: var(--navy-ink); }
   .card p { font-size: .95rem; color: var(--muted); margin: 0; }
 
+  /* The Practice Table is grouped the way the app groups it. The ORDER IS THE CURRICULUM for a
+     player who opens the drills instead of playing a game, so these headings are not decoration. */
+  .drill-group { margin-top: 32px; }
+  .drill-group:first-of-type { margin-top: 26px; }
+  .drill-group > h3 {
+    font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--gold-deep); margin-bottom: 5px;
+  }
+  .drill-group > p { font-size: .97rem; color: var(--muted); max-width: 68ch; margin: 0; }
+  .drill-group .grid { margin-top: 16px; }
+
   .note {
     background: var(--surface); border-left: 4px solid var(--gold);
     padding: 16px 20px; border-radius: 0 8px 8px 0; margin-top: 24px;
@@ -288,39 +299,72 @@
       you practice it against real board positions — so a diagnosis always comes with a fix, and you
       can also just work through them on your own.
     </p>
-    <div class="grid">
-      <div class="card">
-        <h3>Same Bones</h3>
-        <p>Block vision — seeing that very different-looking hands share the same underlying shape.</p>
+    <div class="drill-group">
+      <h3>Know the Card</h3>
+      <p>Read what the card is actually asking for.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Same Bones</h3>
+          <p>Block vision — seeing that very different-looking hands share the same underlying shape.</p>
+        </div>
+        <div class="card">
+          <h3>Color the Hand</h3>
+          <p>The suit rule. Which groups must share a suit, which must differ, and why.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Color the Hand</h3>
-        <p>The suit rule. Which groups must share a suit, which must differ, and why.</p>
+    </div>
+
+    <div class="drill-group">
+      <h3>Build Your Hand</h3>
+      <p>Your own rack: pick a direction, finish it, and know when to change your mind.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Name That Hand</h3>
+          <p>Given thirteen tiles, name the directions worth committing to.</p>
+        </div>
+        <div class="card">
+          <h3>Complete the Hand</h3>
+          <p>What are you waiting on? Three levels, ending in a live table read.</p>
+        </div>
+        <div class="card">
+          <h3>Charleston Lab</h3>
+          <p>Name the line you are going for, then pass the whole arc — right, across, blind, courtesy. Every pass is scored against what you named.</p>
+        </div>
+        <div class="card">
+          <h3>Two Roads</h3>
+          <p>Hand selection — play a deal out, then replay the identical deal down the other road.</p>
+        </div>
+        <div class="card">
+          <h3>Pivot Hands</h3>
+          <p>Knowing when your line is dead and which hand to switch to.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Joker Moves</h3>
-        <p>Call or pass? The joker economy, with the discipline traps that make it hard.</p>
+    </div>
+
+    <div class="drill-group">
+      <h3>Know the Table</h3>
+      <p>Everyone else's hand: what they're chasing, what's safe to throw, and when to stop pushing.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Joker Moves</h3>
+          <p>Call or pass? The joker economy, with the discipline traps that make it hard.</p>
+        </div>
+        <div class="card">
+          <h3>Read the Table</h3>
+          <p>Their exposures and their discards — what is that opponent chasing?</p>
+        </div>
+        <div class="card">
+          <h3>Last Stand</h3>
+          <p>Your hand is gone and the wall is nearly out. You cannot be second in mahjong, so play for the wall game.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Pivot Hands</h3>
-        <p>Knowing when your line is dead and which hand to switch to.</p>
-      </div>
-      <div class="card">
-        <h3>Two Roads</h3>
-        <p>Hand selection — play a deal out, then replay the identical deal down the other road.</p>
-      </div>
-      <div class="card">
-        <h3>Complete the Hand</h3>
-        <p>What are you waiting on? Three levels, ending in a live table read.</p>
-      </div>
-      <div class="card">
-        <h3>Name That Hand</h3>
-        <p>Given thirteen tiles, name the directions worth committing to.</p>
-      </div>
-      <div class="card">
-        <h3>Tile Scanner</h3>
-        <p>At the table: point your camera at your real rack and check it against your card, mid-game.</p>
-      </div>
+    </div>
+
+    <div class="note">
+      <p><strong>Tile Scanner — not a drill.</strong> At the table, photograph your rack and it reads
+      your tiles, then ranks the hands on this year's card by how close you are to each one — three
+      away, one away, or a win. Useful right through the Charleston, when you are working out which
+      hands are worth developing and whether you are passing down the right path.</p>
     </div>
   </section>
 
